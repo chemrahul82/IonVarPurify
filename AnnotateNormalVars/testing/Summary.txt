@@ -1,0 +1,11 @@
+************************************************************************************
+*               Annotation of Potential Sequencing Errors from Ion Torrent Data    *
+*               Version: 1.1                                                       *
+*               Author: Rahul K. Das                                               *
+*               Analysis Date: 2016-09-19                                          *
+************************************************************************************
+
+INPUT FILES....
+N-bam file: /mnt/Despina/projects/PNET/A_125/Normal/Merged/PTRIM.bam
+N-VCF file: /mnt/Despina/projects/PNET/A_125/QC/allA_125_Normal_Merged_02182015vsA_125_Tumor_Merged_02182015/VCF1_Final.vcf
+Output Dir: testing/

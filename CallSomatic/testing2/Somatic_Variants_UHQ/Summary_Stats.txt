@@ -1,0 +1,60 @@
+************************************************************************************
+*               Somatic Variant Calling from Ion Torrent Data                      *
+*               Version: 2.0                                                       *
+*               Author: Rahul K. Das                                               *
+*               Analysis Date: 2017-01-27                                          *
+************************************************************************************
+
+Run-mode: paired
+Sample-type: unknown
+
+Software directory: /rawdata/Rahul/Development/Somatic_Calling_Pipeline/Dev/version2.0/CallSomatic
+
+INPUT FILES....
+T-bam file: /mnt/Despina/projects/PNET/A_146/Tumor/Merged/PTRIM.bam
+T-VCF file: /mnt/Despina/projects/PNET/A_146/QC/allA_146_Normal_Merged_11262014vsA_146_Tumor_Merged_11132014/VCF2_Final.vcf
+N-VCF file: /mnt/Despina/projects/PNET/A_146/QC/allA_146_Normal_Merged_11262014vsA_146_Tumor_Merged_11132014/VCF1_Final.vcf
+Reference fasta file: /results/referenceLibrary/tmap-f3/hg19/hg19.fasta
+BED file: /rawdata/support_files/BED/AmpliSeq-Exome.bed
+Blacklist file: 
+
+FILTERING PARAMETERS....
+p-value threshold for Fisher's exact test: 0.005
+p-value threshold for strand bias: 1.0
+Homopolymer length threshold: 4
+Ref/Alt read quality difference threshold: 20
+Alt/Ref mismatch quality difference threshold: 40
+Ref/Alt read length difference threshold: |25|
+Expected/Alt read length difference threshold: 35
+Average variant's position on the read threshold: 0.1
+Ref/Alt position difference threshold: |0.25|
+Threshold for closest distance to 3'-end of read: 0.1
+Threshold for no. of cosmit hits to whitelist: 25
+************************************************************************************
+
+NODE STATS OF FILTERING NETWORK....
+Total potential somatic variants based on hard AF cutoff: 2811
+Total known germline variants that were filtered out (1000g, dbsnp): 480
+Total variants that failed Fisher's exact test: 525
+Total variants that did not pass QC metrics (Str. bias, HP lengths etc..): 1555
+Total variants that were filtered out for MAF>0 in paired/unpaired N: 17
+Total variants that were whitelisted due to cosmic entries: 8
+************************************************************************************
+
+SUMMARY OF ULTRA_HIGH_QUALITY SOMATIC VARIANTS....
+Total=242
+Exonic=111
+    Missense_SNP_MNP=19;Damaging=9,Tolerant=9,MNP=1
+    Frameshift=79;Insertion=71,Deletion=8,Substitution=0
+    NonFrameshift=3;Insertion=0,Deletion=0,Substitution=3
+    Stopgain_Stoploss=5
+    Total_Nonsynonymous=106
+C>A=0;C>G=0;C>T=0
+T>A=0;T>C=0;T>G=0
+Ts=15;Tv=7;Ts/Tv=2.14
+Splicing=3
+Intronic=117
+Cosmic_entries=2;atleast 50=0
+
+VARIANTS MAF STATS IN THE T SAMPLES....
+UHQ_Somatic:Mean=0.15;Std=0.13;Median=0.12

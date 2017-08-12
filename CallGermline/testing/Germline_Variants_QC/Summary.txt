@@ -1,0 +1,42 @@
+************************************************************************************
+*				HQ Germline Variants from Ion Torrent Data                         *
+*				Version: 2.0													   *
+*				Author: Rahul K. Das											   *
+*				Analysis Date: 2017-02-23										   *
+************************************************************************************
+
+Software directory: /rawdata/Rahul/Development/Somatic_Calling_Pipeline/Dev/version2.0/CallGermline/
+Output Dir: testing/
+
+INPUT FILES....
+bam file: /mnt/Orcus/projects/LungSquamous/LS_204/Normal/Merged/PTRIM.bam
+VCF file: /mnt/Orcus/projects/LungSquamous/LS_204/QC/allLS_204_Normal_Merged_01182017vsLS_204_Tumor_Merged_01192017/VCF1_Final.vcf
+Reference fasta file: /results/referenceLibrary/tmap-f3/hg19/hg19.fasta
+
+FILTERING PARAMETERS....
+p-value threshold for Binomial test: 0.1
+p-value threshold for strand bias: 1.0
+Homopolymer length threshold (indels): 2
+Homopolymer length threshold (snps): 3
+Homopolymer length threshold (mnps): 2
+Ref/Alt read quality difference threshold: 30
+Alt/Ref mismatch quality sum difference threshold: 45
+Ref/Alt read length difference threshold: |30|
+Average variant's position on the read threshold: 0.1
+Threshold for closest distance to 3'-end of read: 0.1
+
+************************************************************************************
+
+SUMMARY OF GERMLINE VARIANTS....
+Total variants from VCF: 63173
+Total variants filtered out: 20335
+	zero variant alleles: 3079
+
+Total variants that passed QC: 42838
+Exonic: 18436
+	Synonymous: 9914
+    Nonsynonymous_SNP: 7989
+Splicing: 91
+Intronic: 21300
+HET: 26414
+HOM: 16296

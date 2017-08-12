@@ -1,0 +1,95 @@
+{
+    "analysis_date": "2017-01-27", 
+    "run_mode": "paired", 
+    "sample_type": "unknown", 
+    "software_dir": "/rawdata/Rahul/Development/Somatic_Calling_Pipeline/Dev/version2.0/CallSomatic", 
+    "input_files": {
+        "tumor_bam": "/mnt/Despina/projects/PNET/A_146/Tumor/Merged/PTRIM.bam", 
+        "tumor_vcf": "/mnt/Despina/projects/PNET/A_146/QC/allA_146_Normal_Merged_11262014vsA_146_Tumor_Merged_11132014/VCF2_Final.vcf", 
+        "normal_vcf": "/mnt/Despina/projects/PNET/A_146/QC/allA_146_Normal_Merged_11262014vsA_146_Tumor_Merged_11132014/VCF1_Final.vcf", 
+        "reference_fasta": "/results/referenceLibrary/tmap-f3/hg19/hg19.fasta", 
+        "bed_file": "/rawdata/support_files/BED/AmpliSeq-Exome.bed", 
+        "blacklist_file": ""
+    }, 
+    "filtering_params": {
+        "variant allele depth": 2, 
+        "p_fisher_exact_test": 0.005, 
+        "p_strand_bias": 1.0, 
+        "homopolymer_length": 4, 
+        "ref_alt_read_Q_difference": 20, 
+        "alt_ref_MMQS_difference": 40, 
+        "ref_alt_read_length_difference": 25, 
+        "expected_alt_read_length_difference": 35, 
+        "normalized_variant_position": 0.1, 
+        "ref_alt_position_difference": 0.25, 
+        "distance_to_3p_end": 0.1, 
+        "counts_cosmic_for_whitelisting": 25
+    }, 
+    "results": {
+        "stats_filtering_tree": {
+            "total_candidate_variants": 2811, 
+            "remove_annotated_germline": 480, 
+            "remove_fail_fisher": 525, 
+            "rescue_cosmic": 8, 
+            "before_read_QC": {
+                "total": 1814, 
+                "mispriming": 80, 
+                "amplicon_bias": 29
+            }, 
+            "remove_fail_read_QC": 1555, 
+            "remove_in_paired_normal": 17, 
+            "remove_in_unpaired_normal": 0, 
+            "remove_by_pcr_filter": 0
+        }, 
+        "final_somatic_stats": {
+            "total": 242, 
+            "exonic": {
+                "total": 111, 
+                "synonymous": 2, 
+                "nonsynonymous": {
+                    "total": 106, 
+                    "missense": {
+                        "total": 19, 
+                        "damaging": 9, 
+                        "tolerant": 9, 
+                        "mnp": 1
+                    }, 
+                    "frameshift": {
+                        "total": 79, 
+                        "insertion": 71, 
+                        "deletion": 8, 
+                        "substitution": 0
+                    }, 
+                    "nonframeshift": {
+                        "total": 3, 
+                        "insertion": 0, 
+                        "deletion": 0, 
+                        "substitution": 3
+                    }, 
+                    "stopgain_stoploss": 5
+                }, 
+                "snp_type": {
+                    "C>A": 4, 
+                    "C>G": 2, 
+                    "C>T": 5, 
+                    "T>A": 0, 
+                    "T>C": 10, 
+                    "T>G": 1
+                }, 
+                "Ts_Tv": 2.14
+            }, 
+            "splicing": 3, 
+            "intronic": 117, 
+            "cosmic": {
+                ">0": 2, 
+                ">25": 0, 
+                ">100": 0
+            }, 
+            "maf_stats": {
+                "mean": 0.15, 
+                "stdev": 0.13, 
+                "median": 0.12
+            }
+        }
+    }
+}

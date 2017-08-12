@@ -1,0 +1,108 @@
+{
+    "analysis_date": "2017-02-25", 
+    "run_mode": "paired", 
+    "sample_type": "unknown", 
+    "software_dir": "/rawdata/Rahul/Development/Somatic_Calling_Pipeline/Dev/version2.0/CallSomatic", 
+    "input_files": {
+        "tumor_bam": "/mnt/Despina/projects/PNET/A_146/Tumor/Merged/PTRIM.bam", 
+        "tumor_vcf": "/mnt/Despina/projects/PNET/A_146/QC/allA_146_Normal_Merged_11262014vsA_146_Tumor_Merged_11132014/VCF2_Final.vcf", 
+        "normal_vcf": "/mnt/Despina/projects/PNET/A_146/QC/allA_146_Normal_Merged_11262014vsA_146_Tumor_Merged_11132014/VCF1_Final.vcf", 
+        "reference_fasta": "/results/referenceLibrary/tmap-f3/hg19/hg19.fasta", 
+        "bed_file": "/rawdata/support_files/BED/AmpliSeq-Exome.bed", 
+        "blacklist_file": ""
+    }, 
+    "filtering_params": {
+        "variant allele depth": 2, 
+        "p_fisher_exact_test": 0.05, 
+        "p_strand_bias": 1.0, 
+        "homopolymer_length_snp": 3, 
+        "homopolymer_length_mnp": 3, 
+        "homopolymer_length_indel": 2, 
+        "ref_alt_read_Q_difference": 20, 
+        "alt_ref_MMQS_difference": 40, 
+        "ref_alt_read_length_difference": 25, 
+        "expected_alt_read_length_difference": 35, 
+        "normalized_variant_position": 0.1, 
+        "ref_alt_position_difference": 0.25, 
+        "distance_to_3p_end": 0.1, 
+        "counts_cosmic_for_whitelisting": 0
+    }, 
+    "results": {
+        "stats_filtering_tree": {
+            "total_candidate_variants": 2811, 
+            "annotated_germline": 480, 
+            "fail_fisher": 444, 
+            "rescue_cosmic": 8, 
+            "duplicate_vars": 0, 
+            "before_read_QC": {
+                "total": 1895, 
+                "whitelist_cosmic": 0, 
+                "mispriming": 87, 
+                "amplicon_bias": 31
+            }, 
+            "fail_read_QC": {
+                "total": 1811, 
+                "pcr_filter": 113, 
+                "zero_vardepth": 102, 
+                "hp": {
+                    "snp": 31, 
+                    "mnp": 20, 
+                    "indel": 380
+                }, 
+                "vardepth": 0
+            }, 
+            "in_PON": 0, 
+            "in_paired_normal": 16
+        }, 
+        "final_somatic_stats": {
+            "total": 68, 
+            "exonic": {
+                "total": 22, 
+                "synonymous": 3, 
+                "nonsynonymous": {
+                    "total": 18, 
+                    "missense": {
+                        "total": 9, 
+                        "damaging": 4, 
+                        "tolerant": 6, 
+                        "mnp": 1
+                    }, 
+                    "frameshift": {
+                        "total": 7, 
+                        "insertion": 7, 
+                        "deletion": 0, 
+                        "substitution": 0
+                    }, 
+                    "nonframeshift": {
+                        "total": 0, 
+                        "insertion": 0, 
+                        "deletion": 0, 
+                        "substitution": 0
+                    }, 
+                    "stopgain_stoploss": 2
+                }, 
+                "snp_type": {
+                    "C>A": 3, 
+                    "C>G": 2, 
+                    "C>T": 2, 
+                    "T>A": 0, 
+                    "T>C": 5, 
+                    "T>G": 1
+                }, 
+                "Ts_Tv": 1.17
+            }, 
+            "splicing": 1, 
+            "intronic": 42, 
+            "cosmic": {
+                ">0": 0, 
+                ">25": 0, 
+                ">100": 0
+            }, 
+            "maf_stats": {
+                "mean": 0.18, 
+                "stdev": 0.16, 
+                "median": 0.12
+            }
+        }
+    }
+}
